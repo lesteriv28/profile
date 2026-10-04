@@ -1,0 +1,14 @@
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Navbar } from './navbar/navbar';
+import { HeroSection } from "./hero-section/hero-section";
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, Navbar, HeroSection],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
+})
+export class App {
+  protected readonly title = signal('webpage');
+}
