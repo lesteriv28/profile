@@ -27,7 +27,8 @@ export class Navbar {
         label: 'Contact'
       },
       {
-        label: 'Resume'
+        label: 'Resume',
+        style: { '--p-menubar-item-focus-color': '#03e9f4' }
       }
     ]
   }

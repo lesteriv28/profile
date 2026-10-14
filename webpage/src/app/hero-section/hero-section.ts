@@ -1,34 +1,38 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
-import { NgForOf } from '@angular/common';
+import { afterNextRender, Component, inject, signal } from '@angular/core';
+import { NgxTypedWriterComponent } from 'ngx-typed-writer';
+
+interface Quote {
+  quote: string;
+  author: string;
+}
 
 @Component({
   selector: 'hero-section',
-  imports: [NgForOf],
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.scss',
+  imports: [NgxTypedWriterComponent],
 })
 export class HeroSection {
   private http = inject(HttpClient);
-  public quotes: any;
-  public quote: string = "";
-  public author: string = "";
+  private quotes: Quote[] = [];
+  public quote = signal('');
+  public author = signal('');
 
   constructor() {
-    this.http.get('/quotes.json').subscribe((data) => {
-      
-      this.quotes = data;
-      this.getQuote();
+    // Browser-only: during prerender this request never completes and the build times out.
+    afterNextRender(() => {
+      this.http.get<Quote[]>('/quotes.json').subscribe((data) => {
+        this.quotes = data;
+        this.getQuote();
+      });
     });
   }
 
-  //methods
   public getQuote() {
-
     const i = Math.floor(Math.random() * this.quotes.length);
-    this.quote = this.quotes[i].quote;
-    this.author = this.quotes[i].author;
-    }
-
- 
+    this.quote.set(this.quotes[i].quote);
+    this.author.set(this.quotes[i].author);
+    console.log(this.quotes[i].quote + ' ' + this.quotes[i].author);
+  }
 }

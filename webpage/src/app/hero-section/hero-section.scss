@@ -8,11 +8,11 @@ img {
   display: block;
 }
 
-.hero{
-    min-height: calc(100dvh - 64px);
-    display: grid;
-    place-items: center;
-  
+.hero {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+
   &-grid {
     padding-block: clamp(5px, 4vw, 96px);
     max-width: 1150px;
@@ -48,13 +48,13 @@ img {
 
 h1 {
   font:
-    700 clamp(36px, 6vw, 52px)/1.1 "Space Grotesk",
+    700 clamp(36px, 6vw, 52px)/1.1 'Space Grotesk',
     Inter;
   margin: 6px 0 14px;
 }
 
 .accent {
-  color: var(--accent);
+  color: #e60023;
 }
 
 .lead {
@@ -80,7 +80,7 @@ h1 {
 }
 
 .btn.primary {
-  background: var(--accent);
+  background: #e60023;
   border-color: transparent;
 }
 
@@ -108,7 +108,7 @@ h1 {
 }
 
 .social:hover {
-  color: var(--accent);
-  transform: translateY(-2px);
-  border: 1px solid var(--accent);
+  color: #e60023;
+  transform: translateY(-1px);
+  border: 1px solid #e60023;
 }

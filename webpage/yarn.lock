@@ -1246,6 +1246,34 @@
     node-gyp "^12.1.0"
     proc-log "^6.0.0"
 
+"@omnedia/ngx-floodlight@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@omnedia/ngx-floodlight/-/ngx-floodlight-4.0.1.tgz#02c16bdc4826156bc4bcf9a4d8e9f8f39a1a3e82"
+  integrity sha512-O9joV3O3O+zSi380NT85LKiaulU6KLO92gV9oXhCgTz5cpZAlxo+J4Kz6HTkNa6QY7qLgNpCiTclsTidF0ktnQ==
+  dependencies:
+    tslib "^2.3.0"
+
+"@omnedia/ngx-meteors@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@omnedia/ngx-meteors/-/ngx-meteors-4.0.1.tgz#ce0d1726f09946bc5a3537183992032860209214"
+  integrity sha512-iBCu8I0cdl67SHd9hzGKE1ZPlivda2xTnOKmDi0NRZLRa1aXXfzexeRlZ/URqP2eJAOnaPnssr496pwwk/lb7w==
+  dependencies:
+    tslib "^2.3.0"
+
+"@omnedia/ngx-shine-border@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@omnedia/ngx-shine-border/-/ngx-shine-border-4.0.1.tgz#a899901dd939c6a249512570a9c80b4376c36af7"
+  integrity sha512-ilZ88GUuD4/mUEzPscfhaZqtR/ZsBhe6TeCFcTd0sq+BDmal1jRew+21rH1zt7Ecvg+WbgGKgvePCi9eMwiXNQ==
+  dependencies:
+    tslib "^2.3.0"
+
+"@omnedia/ngx-starry-sky@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@omnedia/ngx-starry-sky/-/ngx-starry-sky-4.0.1.tgz#13e9d341a151dd29c419252f5c7603bad6a5c6a4"
+  integrity sha512-TTyAw5cvCyZKZ/N+3V6rwoTh7oikz6Xd/s3SnOs0CmSKEe9fIDhX5xZdzahIltgzyfIf9gqQZzM0VDd9cBd3rg==
+  dependencies:
+    tslib "^2.3.0"
+
 "@parcel/watcher-android-arm64@2.6.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@parcel/watcher-android-arm64/-/watcher-android-arm64-2.6.0.tgz#99aaa3223d43807c9340af439cad7e9b6d26ada6"
@@ -3760,6 +3788,13 @@ negotiator@^1.0.0:
   dependencies:
     content-type "^2.1.0"
 
+ngx-typed-writer@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/ngx-typed-writer/-/ngx-typed-writer-1.7.0.tgz#25b87f639a6ca2574ced7079995b3c8d8d3c29a9"
+  integrity sha512-ITKPXN/VXYBrh87IpK3qrvH2NxLf9RIrvE4d7PAtiHEzJxXv0nxstQTgdwhFxv4i0913d74AIP1TP6lHv/OsxQ==
+  dependencies:
+    tslib "^2.3.0"
+
 node-addon-api@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-6.1.0.tgz#ac8470034e58e67d0c6f1204a18ae6995d9c0d76"
@@ -4637,6 +4672,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+tailwindcss-primeui@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss-primeui/-/tailwindcss-primeui-0.6.1.tgz#fcb74738e80d4253c14521114773f5ce638c6ee8"
+  integrity sha512-T69Rylcrmnt8zy9ik+qZvsLuRIrS9/k6rYJSIgZ1trnbEzGDDQSCIdmfyZknevqiHwpSJHSmQ9XT2C+S/hJY4A==
 
 tailwindcss@4.3.3, tailwindcss@^4.3.3:
   version "4.3.3"

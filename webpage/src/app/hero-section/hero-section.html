@@ -1,48 +1,58 @@
-<div class="hero-grid">
-  <div class="hero--image">
-    <img
-      src="profile.jpg"
-      alt="Lester Pino Barragan portrait"
-      width="800"
-      height="800"
-      fetchpriority="high"
-      decoding="async"
-    />
-  </div>
-
-  <div>
-    <div class="kicker">Computer Engineer | Full-Stack Developer</div>
-
-    <h1>Hello, I'm <span class="accent">Lester</span> Pino Barragan</h1>
-
-    <p>
-      <q>{{ quote }}</q>
-      <br />
-      <cite>— {{ author }}</cite>
-    </p>
-
-    <div class="buttons">
-      <a href="#projects" class="btn primary">View Projects</a>
-      <a href="#about" class="btn ghost">About Me</a>
+  <section class="hero">
+  <div class="hero-grid">
+    <div class="hero--image">
+      <img
+        src="profile.jpg"
+        alt="Lester Pino Barragan portrait"
+        width="800"
+        height="800"
+        fetchpriority="high"
+        decoding="async"
+      />
     </div>
 
-    <div class="buttons">
-      <a
-        href="https://www.linkedin.com/in/lesterpino/"
-        target="_blank"
-        rel="noopener"
-        class="social"
-        aria-label="LinkedIn profile"
-        ><i class="ri-linkedin-box-fill"></i
-      ></a>
-      <a
-        href="https://github.com/lesteriv28"
-        target="_blank"
-        rel="noopener"
-        class="social"
-        aria-label="GitHub profile"
-        ><i class="ri-github-fill"></i
-      ></a>
+    <div>
+      <div class="kicker">Computer Engineer | Full-Stack Developer</div>
+
+      <h1>Hello, I'm <span class="accent">Lester</span> Pino Barragan</h1>
+
+      <p>
+        @if (quote() != '') {
+          <ngx-typed-writer
+            [strings]="[
+              '<q>' + quote() + '</q>' + '<br />' + '<cite>' + '— ' + author() + '</cite>',
+            ]"
+            [isHTML]="true"
+            [loop]="false"
+            [typeSpeed]="35"
+            [showCursor]="false"
+          ></ngx-typed-writer>
+        }
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#about" class="btn ghost">About Me</a>
+      </div>
+
+      <div class="buttons">
+        <a
+          href="https://www.linkedin.com/in/lesterpino/"
+          target="_blank"
+          rel="noopener"
+          class="social"
+          aria-label="LinkedIn profile"
+          ><i class="ri-linkedin-box-fill"></i
+        ></a>
+        <a
+          href="https://github.com/lesteriv28"
+          target="_blank"
+          rel="noopener"
+          class="social"
+          aria-label="GitHub profile"
+          ><i class="ri-github-fill"></i
+        ></a>
+      </div>
     </div>
   </div>
-</div>
+</section>

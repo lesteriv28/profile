@@ -1,24 +1,27 @@
-.layout-topbar{
-    position: sticky;
-    top: 0rem;
-    z-index: 1100;
-    transition: background-color .15s;
-    border-bottom: 1px solid red;
+.layout-topbar {
+  position: sticky;
+  top: 0rem;
+  z-index: 1100;
+  transition: background-color 0.15s;
 }
 
-.layout-topbar-inner{
-    height: 3.5rem;
-    padding: 0 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.layout-topbar-inner {
+  height: 3.5rem;
+  padding: 0 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.topbar-items{
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    gap: 1rem;
-    align-items: center;
+.topbar-items {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  align-items: center;
+}
+
+.custom-nav {
+  --p-menubar-item-focus-color: #e60023;
 }

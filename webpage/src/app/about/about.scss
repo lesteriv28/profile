@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+.about {
+  width: 100%;
+
+    &-title{
+        font: 700 clamp(26px, 4.5vw, 36px)/1.2 "Space Grotesk", Inter;
+        text-align: center;
+        padding-block: clamp(5px, 3vw, 96px);
+    }
+
+  // Keep the timeline content above the vertical connector.
+  ::ng-deep .p-timeline-event-content {
+    min-width: 0;
+  }
+
+  ::ng-deep .p-timeline-event-connector {
+    width: 2px;
+  }
+
+  // Improve spacing on narrow screens.
+  @media (max-width: 640px) {
+    ::ng-deep .p-timeline-event-opposite {
+      display: none;
+    }
+
+    ::ng-deep .p-timeline-event-content {
+      padding-right: 0;
+    }
+  }
+}
