@@ -39,6 +39,7 @@
     "@primeng/themes": "^21.0.4",
     "@tailwindcss/postcss": "^4.3.3",
     "express": "^5.1.0",
+    "ngx-round-progress": "^16.1.1",
     "ngx-typed-writer": "^1.7.0",
     "postcss": "^8.5.28",
     "primeng": "^22.1.1",
