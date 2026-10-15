@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { Navbar } from './navbar/navbar';
-import { HeroSection } from "./hero-section/hero-section";
-import { About } from './about/about';
-import { Skills } from './skills/skills';
+import { Navbar } from './sections/navbar/navbar';
+import { HeroSection } from "./sections/hero-section/hero-section";
+import { About } from './sections/about/about';
+import { Skills } from './sections/skills/skills';
 import { NgxTypedWriterModule } from 'ngx-typed-writer';
 import { NgxStarrySkyComponent } from '@omnedia/ngx-starry-sky';
 
