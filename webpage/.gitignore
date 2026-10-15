@@ -10,6 +10,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+/.yarn/install-state.gz
 
 # IDEs and editors
 .idea/
@@ -42,3 +43,6 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# PrimeNG license key (see src/app/primeng-license.example.ts)
+/src/app/primeng-license.ts

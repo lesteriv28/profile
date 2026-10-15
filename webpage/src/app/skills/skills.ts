@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RoundProgressModule } from 'ngx-round-progress'
 
 @Component({
   selector: 'app-skills',

@@ -33,6 +33,5 @@ export class HeroSection {
     const i = Math.floor(Math.random() * this.quotes.length);
     this.quote.set(this.quotes[i].quote);
     this.author.set(this.quotes[i].author);
-    console.log(this.quotes[i].quote + ' ' + this.quotes[i].author);
   }
 }

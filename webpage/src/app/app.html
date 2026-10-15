@@ -1,8 +1,12 @@
 <app-navbar />
-<om-starry-sky>
-  <div class="content">
-    <hero-section />
-    <about />
-    <app-skills></app-skills>
-  </div>
-</om-starry-sky>
+
+<!-- om-starry-sky measures the DOM in ngAfterViewInit, so it can only run in the browser.
+     @defer renders nothing on the server; the client adds the sky behind the page. -->
+@defer (on immediate) {
+  <om-starry-sky class="sky-bg" />
+}
+
+
+  <hero-section />
+  <about />
+  <app-skills></app-skills>

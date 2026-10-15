@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Navbar } from './navbar/navbar';
 import { HeroSection } from "./hero-section/hero-section";
 import { About } from './about/about';
@@ -9,7 +8,7 @@ import { NgxStarrySkyComponent } from '@omnedia/ngx-starry-sky';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, HeroSection, About, Skills, NgxTypedWriterModule, NgxStarrySkyComponent],
+  imports: [Navbar, HeroSection, About, Skills, NgxTypedWriterModule, NgxStarrySkyComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

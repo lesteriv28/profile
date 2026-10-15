@@ -1,3 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 @import "tailwindcss-primeui";
+/* Matches om-starry-sky's default sky color, so the page is dark before the sky loads */
+body {
+  background-color: rgb(23 23 23);
+}
