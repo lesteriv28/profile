@@ -34,6 +34,7 @@
         <ng-template #opposite let-event>
           <div class="px-4 py-3" pAnimateOnScroll
             enterClass="animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000"
+            leaveClass="animate-leave fade-out-10 animate-duration-1000"
             [threshold]="0.2">
             <div class="text-sm font-semibold text-surface-800 dark:text-surface-100">
               {{ event.date }}
