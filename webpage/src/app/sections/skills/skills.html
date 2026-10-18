@@ -7,12 +7,11 @@
     </h2>
   </header>
 
-  <div class="flex gap-5 justify-center">
-    <h1>Frontend</h1>
-    <p-knob [(ngModel)]="val" [readonly]="true" [strokeWidth]="4" valueColor="red"> </p-knob>
-    <h1>Backend</h1>
-    <p-knob [(ngModel)]="val" [readonly]="true" [strokeWidth]="4" valueColor="red"> </p-knob>
-    <h1>Hardware</h1>
-    <p-knob [(ngModel)]="val" [readonly]="true" [strokeWidth]="4" valueColor="red"> </p-knob>
+  <div class="flex gap-5 justify-center"   pAnimateOnScroll
+                    enterClass="animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000"
+                    leaveClass="animate-leave fade-out-10 animate-duration-1000">
+    <p-chart type="radar" [data]="data" [options]="options" class="w-full md:w-[30rem]" />
   </div>
+
+
 </section>
