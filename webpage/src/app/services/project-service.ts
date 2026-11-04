@@ -23,7 +23,7 @@ export interface Irepo {
 export class ProjectService {
   user = 'lesteriv28';
   httpClient = inject(HttpClient);
-  api_url = 'https://api.github.com/users/' + this.user + '/repos';
+  protected api_url = 'https://api.github.com/users/' + this.user + '/repos';
   repos = signal<Irepo[]>([]);
 
   loadRepos() {
