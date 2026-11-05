@@ -2,6 +2,33 @@
   max-width: 1150px;
   margin: 0 auto;
   padding: 0 clamp(20px, 4vw, 28px);
+
+  p-selectbutton {
+    gap: 0.5rem;
+    --p-togglebutton-background: transparent;
+    --p-togglebutton-content-padding: 8px 12px;
+    --p-togglebutton-border-color: transparent;
+    --p-togglebutton-checked-border-color: transparent;
+    --p-togglebutton-content-border-radius: 999px;
+    --p-togglebutton-font-weight: 700;
+    --p-togglebutton-checked-background: transparent;
+    --p-togglebutton-content-checked-background: rgba(230, 0, 35, 0.12);
+    --p-togglebutton-hover-background: transparent;
+
+    ::ng-deep {
+      .p-togglebutton-content {
+        border: 2px solid rgba(255, 255, 255, 0.1);
+      }
+      .p-togglebutton:not(.p-togglebutton-checked):hover .p-togglebutton-content {
+        background: var(--p-surface-950);
+      }
+      .p-togglebutton-checked .p-togglebutton-content {
+        border: 2px solid rgba(230, 0, 35, 0.12);
+
+        cursor: default;
+      }
+    }
+  }
 }
 
 .section-title {
@@ -33,35 +60,7 @@ h2[id] {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.btn.primary {
-  background: var(--accent);
-  border-color: transparent;
-}
-
-.btn.primary:hover {
-  filter: brightness(0.95);
-}
-
-.btn.ghost:hover {
-  background: rgba(255, 255, 255, 0.06);
-}
-
 /* Projects */
-
-.filter-btn {
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--muted);
-  background: transparent;
-  font-weight: 700;
-}
-
-.filter-btn.active {
-  color: #fff;
-  border-color: var(--accent);
-  background: rgba(230, 0, 35, 0.12);
-}
 
 .grid {
   display: grid;

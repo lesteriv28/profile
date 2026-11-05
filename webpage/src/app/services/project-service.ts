@@ -15,6 +15,7 @@ export interface Irepo {
   desc: string | null;
   languages?: string[];
   topics?: string[];
+  category?: string;
 }
 
 @Injectable({
@@ -27,7 +28,11 @@ export class ProjectService {
   repos = signal<Irepo[]>([]);
 
   loadRepos() {
-    this.httpClient.get<GithubRepo[]>(this.api_url).subscribe({
+    this.httpClient.get<GithubRepo[]>(this.api_url, {
+    headers: {
+      'Authorization': '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',
+    },
+  }).subscribe({
       next: (data) => {
         const arr: Irepo[] = data.map((element) => ({
           name: element.name,

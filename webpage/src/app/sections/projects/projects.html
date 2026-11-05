@@ -1,13 +1,13 @@
 <section>
   <div class="container">
-    <h2>Projects</h2>
+    <h2 class="section-title">Projects</h2>
     <div class="flex gap-4 flex-wrap mb-5">
-      <button class="filter-btn active" data-filter="all" aria-selected="true" aria-pressed="true">
-        All
-      </button>
-      <button class="filter-btn" data-filter="web" aria-pressed="false">web</button>
-      <button class="filter-btn" data-filter="hardware" aria-pressed="false">hardware</button>
-      <button class="filter-btn" data-filter="software" aria-pressed="false">software</button>
+      <p-selectbutton
+        [options]="projectOptions"
+        [(ngModel)]="value"
+        optionLabel="name"  
+        optionValue="value"
+      />
     </div>
 
     <div class="grid" id="projectGrid">
@@ -21,7 +21,7 @@
           </ng-template>
           <ng-template #subtitle>
             <div class="flex flex-wrap gap-2">
-              @for (badges of repo.languages; track badges) {
+              @for (badges of repo.languages; track $index) {
                 <p-tag severity="info" [rounded]="true">{{ badges }}</p-tag>
               }
             </div>
@@ -30,13 +30,13 @@
             <p>{{ repo.desc }}</p>
           </div>
 
-            <ng-template #footer>
-              <div class="flex flex-wrap gap-1 mt-3">
-                @for (badges of repo.topics; track badges) {
-                  <p-tag severity="warn" [rounded]="true">{{ badges }}</p-tag>
-                }
-              </div>
-            </ng-template>
+          <ng-template #footer>
+            <div class="flex flex-wrap gap-1 mt-3">
+              @for (badges of repo.topics; track $index) {
+                <p-tag severity="warn" [rounded]="true">{{ badges }}</p-tag>
+              }
+            </div>
+          </ng-template>
           <div class="overlay">
             <div class="actions">
               <a href="{{ repo.url }}" class="btn ghost" target="_blank" rel="noopener">GitHub</a>
