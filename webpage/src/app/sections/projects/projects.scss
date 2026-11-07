@@ -1,0 +1,112 @@
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 28px);
+
+  p-selectbutton {
+    gap: 0.5rem;
+    --p-togglebutton-background: transparent;
+    --p-togglebutton-content-padding: 8px 12px;
+    --p-togglebutton-border-color: transparent;
+    --p-togglebutton-checked-border-color: transparent;
+    --p-togglebutton-content-border-radius: 999px;
+    --p-togglebutton-font-weight: 700;
+    --p-togglebutton-checked-background: transparent;
+    --p-togglebutton-content-checked-background: rgba(230, 0, 35, 0.12);
+    --p-togglebutton-hover-background: transparent;
+
+    ::ng-deep {
+      .p-togglebutton-content {
+        border: 2px solid rgba(255, 255, 255, 0.1);
+      }
+      .p-togglebutton:not(.p-togglebutton-checked):hover .p-togglebutton-content {
+        background: var(--p-surface-950);
+      }
+      .p-togglebutton-checked .p-togglebutton-content {
+        border: 2px solid rgba(230, 0, 35, 0.12);
+
+        cursor: default;
+      }
+    }
+  }
+}
+
+.section-title {
+  font:
+    700 clamp(26px, 4.5vw, 36px)/1.2 'Space Grotesk',
+    Inter;
+  margin: 0 0 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Projects */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--panel, #111214);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius, 16px);
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.thumb {
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, #2a0e14, #161616);
+  display: grid;
+  place-items: center;
+  color: #bbb;
+  font-weight: 700;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.overlay .btn {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
