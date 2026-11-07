@@ -28,10 +28,7 @@ export class ProjectService {
   repos = signal<Irepo[]>([]);
 
   loadRepos() {
-    this.httpClient.get<GithubRepo[]>(this.api_url, {
-    headers: {
-    },
-  }).subscribe({
+    this.httpClient.get<GithubRepo[]>(this.api_url).subscribe({
       next: (data) => {
         const arr: Irepo[] = data.map((element) => ({
           name: element.name,

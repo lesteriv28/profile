@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, computed } from '@angular/core';
+import { Component, inject, OnInit, computed, signal } from '@angular/core';
 import { ProjectService } from '../../services/project-service';
 import { CardModule } from 'primeng/card';
 import { AvatarModule } from 'primeng/avatar';
@@ -43,6 +43,17 @@ export class Projects implements OnInit {
       }; //direct return
     });
   });
+
+  readonly filteredRepos = computed(() => {
+    const repos = this.categorizedRepos();
+    if (this.value() != 'all') {
+      return repos.filter((r) => {
+        return r.category === this.value();
+      });
+    }
+    return repos;
+  });
+
   ngOnInit(): void {
     this.projectService.loadRepos();
   }
@@ -55,7 +66,7 @@ export class Projects implements OnInit {
     { name: 'Software', value: 'software' },
   ];
 
-  value!: string;
+  value = signal('all');
 
   categorizeRepo(name: string, langs: string[], topics: string[]): 'hardware' | 'software' | 'web' {
     const isWeb =
@@ -73,5 +84,9 @@ export class Projects implements OnInit {
     if (isHardware) return 'hardware';
     if (isWeb) return 'web';
     return 'software';
+  }
+
+  filterCategory(event: any) {
+    return this.filteredRepos();
   }
 }

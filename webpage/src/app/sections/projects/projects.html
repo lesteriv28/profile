@@ -4,14 +4,16 @@
     <div class="flex gap-4 flex-wrap mb-5">
       <p-selectbutton
         [options]="projectOptions"
-        [(ngModel)]="value"
-        optionLabel="name"  
+        [ngModel]="value()"
+        (ngModelChange)="value.set($event)"
+        optionLabel="name"
         optionValue="value"
+        (onChange)="filterCategory($event)"
       />
     </div>
 
     <div class="grid" id="projectGrid">
-      @for (repo of items(); track repo.name) {
+      @for (repo of filteredRepos(); track repo.name) {
         <p-card class="card">
           <ng-template #header>
             <div class="thumb">{{ repo.name }}</div>

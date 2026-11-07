@@ -38,18 +38,6 @@
   margin: 0 0 16px;
 }
 
-.section-sub {
-  color: var(--muted);
-  margin: 0 0 22px;
-}
-
-section[id],
-.section[id],
-h2[id] {
-  scroll-margin-top: calc(env(safe-area-inset-top) + 16px);
-  /* a little breathing room */
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
