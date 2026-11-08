@@ -1,0 +1,25 @@
+<div class="max-w-sm mx-auto space-y-4">
+  @for (r of referrals(); track $index) {
+    <p-message severity="info">
+      <ng-template #icon>
+        <p-avatar image="{{ r.pic }}" shape="circle" />
+        <span class="ms-2">{{ r.comment }}</span>
+      </ng-template>
+    </p-message>
+    <div class="flex flex-col">
+      <span class="ms-2">{{ r.name }}</span>
+      <span class="ms-2">{{ r.title }}</span>
+      <span class="ms-2"
+        >{{ r.company }}
+        <a
+          href="{{ r.url }}"
+          target="_blank"
+          rel="noopener"
+          class="social"
+          aria-label="LinkedIn profile"
+          ><i class="ri-linkedin-box-fill"></i
+        ></a>
+      </span>
+    </div>
+  }
+</div>

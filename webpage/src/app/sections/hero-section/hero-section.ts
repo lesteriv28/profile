@@ -1,11 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { afterNextRender, Component, inject, signal } from '@angular/core';
+import { afterNextRender, Component, computed, inject, signal } from '@angular/core';
 import { NgxTypedWriterComponent } from 'ngx-typed-writer';
-
-interface Quote {
-  quote: string;
-  author: string;
-}
+import { QuotesService } from '../../services/quotes-service';
 
 @Component({
   selector: 'hero-section',
@@ -14,24 +9,16 @@ interface Quote {
   imports: [NgxTypedWriterComponent],
 })
 export class HeroSection {
-  private http = inject(HttpClient);
-  private quotes: Quote[] = [];
-  public quote = signal('');
-  public author = signal('');
+  private quoteService = inject(QuotesService);
+
+  readonly quote = computed(() => this.quoteService.selectedQuote()?.quote ?? '');
+
+  readonly author = computed(() => this.quoteService.selectedQuote()?.author ?? '');
 
   constructor() {
     // Browser-only: during prerender this request never completes and the build times out.
     afterNextRender(() => {
-      this.http.get<Quote[]>('/quotes.json').subscribe((data) => {
-        this.quotes = data;
-        this.getQuote();
-      });
+      this.quoteService.loadQuotes();
     });
-  }
-
-  public getQuote() {
-    const i = Math.floor(Math.random() * this.quotes.length);
-    this.quote.set(this.quotes[i].quote);
-    this.author.set(this.quotes[i].author);
   }
 }
