@@ -7,6 +7,7 @@
     pAnimateOnScroll
     enterClass="animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000"
     leaveClass="animate-leave fade-out-10 animate-duration-1000"
+    [once]="true"
   >
     <div class="flex justify-evenly items-center">
       <p-chart type="radar" [data]="data" [options]="options" class="w-full md:w-[30rem]" />
