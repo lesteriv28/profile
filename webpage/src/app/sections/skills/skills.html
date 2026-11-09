@@ -1,17 +1,18 @@
-<section class="about py-16 px-4 sm:px-6">
-  <header class="mx-auto max-w-3xl text-center mb-16">
-    <h2
-      class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-surface-900 dark:text-surface-0 mb-6"
-    >
-      My Skills
-    </h2>
+<section class="py-16 px-4 sm:px-6" id="contact">
+  <header>
+    <h2>Let's build something together.</h2>
   </header>
 
-  <div class="flex gap-5 justify-center"   pAnimateOnScroll
-                    enterClass="animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000"
-                    leaveClass="animate-leave fade-out-10 animate-duration-1000">
-    <p-chart type="radar" [data]="data" [options]="options" class="w-full md:w-[30rem]" />
+  <div
+    pAnimateOnScroll
+    enterClass="animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000"
+    leaveClass="animate-leave fade-out-10 animate-duration-1000"
+    [once]="true"
+  >
+    <div class="flex justify-evenly items-center">
+      <p-chart type="radar" [data]="data" [options]="options" class="w-full md:w-[30rem]" />
+      <contact-card />
+    </div>
+    <reference-card />
   </div>
-
-
 </section>

@@ -1,0 +1,33 @@
+<div class="flex flex-wrap gap-10 space-y-4 justify-around">
+  @for (r of referrals(); track $index) {
+    <div class="card max-w-sm">
+      <p-message severity="info">
+        <ngx-typed-writer
+          [strings]="['<q>' + [r.comment] + '</q>']"
+          [isHTML]="true"
+          [loop]="false"
+          [typeSpeed]="35"
+          [showCursor]="false"
+        ></ngx-typed-writer>
+      </p-message>
+      <div class="flex items-center justify-between">
+        <div class="flex flex-col m-2">
+          <span class="ms-2">{{ r.name }}</span>
+          <span class="ms-2 text-muted-color">{{ r.title }}</span>
+          <span class="ms-2 text-muted-color"
+            >{{ r.company }}
+            <a
+              href="{{ r.url }}"
+              target="_blank"
+              rel="noopener"
+              class="social"
+              aria-label="LinkedIn profile"
+              ><i class="ri-linkedin-box-fill"></i
+            ></a>
+          </span>
+        </div>
+        <p-avatar image="{{ r.pic }}" shape="circle" class="min-w-15 min-h-15" />
+      </div>
+    </div>
+  }
+</div>

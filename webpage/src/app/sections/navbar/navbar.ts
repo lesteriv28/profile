@@ -15,20 +15,26 @@ export class Navbar {
   ngOnInit() {
     this.items = [
       {
-        label: 'About'
+        label: 'Home',
+        url:'#'
       },
       {
-        label: 'Skills'
+        label: 'Projects',
+        url:'#projects'
       },
       {
-        label: 'Projects'
+        label: 'About',
+        url:'#about'
       },
       {
-        label: 'Contact'
+        label: 'Contact',
+        url:'#contact'
       },
       {
         label: 'Resume',
-        style: { '--p-menubar-item-focus-color': '#03e9f4' }
+        style: { '--p-menubar-item-focus-color': 'var(--accent-neon-blue)' },
+        url: "https://raw.githubusercontent.com/lesteriv28/lesteriv28/main/assets/_LesterIvanPinoBarragan.pdf",
+        target: '_blank'
       }
     ]
   }

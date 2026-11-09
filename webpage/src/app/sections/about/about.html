@@ -1,9 +1,7 @@
-<section class="py-16 px-4 sm:px-6">
+<section class="py-16 px-4 sm:px-6" id="about">
   <!-- Introduction -->
-  <header class="mx-auto max-w-3xl text-center mb-16">
-    <h2
-      class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-surface-900 dark:text-surface-0 mb-6"
-    >
+  <header>
+    <h2>
       My Journey
     </h2>
   </header>
@@ -32,7 +30,8 @@
       >
         <!-- Desktop Dates -->
         <ng-template #opposite let-event>
-          <div class="px-4 py-3" pAnimateOnScroll
+          <div class="px-4 py-3"   pAnimateOnScroll
+  [once]="true"
             enterClass="animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000"
             leaveClass="animate-leave fade-out-10 animate-duration-1000"
             [threshold]="0.2">
@@ -49,7 +48,8 @@
         <ng-template #marker let-event>
           <span
             class="relative z-10 flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full text-white shadow-md ring-4 ring-surface-0 dark:ring-surface-900"
-            pAnimateOnScroll
+              pAnimateOnScroll
+  [once]="true"
             enterClass="animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000"
             [threshold]="0.2"
             [ngClass]="event.color"
@@ -105,7 +105,8 @@
         <!-- Timeline Card -->
         <ng-template #content let-event>
           <article
-            pAnimateOnScroll
+              pAnimateOnScroll
+  [once]="true"
             enterClass="animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000"
             [threshold]="0.2"
             class="group mb-7 rounded-2xl border bg-surface-0 dark:bg-surface-800 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden text-left"

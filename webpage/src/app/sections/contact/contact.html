@@ -1,0 +1,51 @@
+<div class="flex justify-center" style="background-color: #111214">
+  <p-fieldset legend="Contact" class="max-w-md w-full">
+    <div class="flex flex-col gap-6 text-sm p-2">
+      <div class="flex items-center justify-around">
+        <img
+          class="avatar"
+          src="lester.jpeg"
+          alt="Lester Pino Barragan portrait"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="flex justify-center">
+          <p-message severity="info" (click)="op.toggle($event)">
+            <ngx-typed-writer
+              [strings]="[
+                'Hey there, nice to meet you I am Lester. Below are some references from peers and colleagues. If you would like to get in contact please click on this message to access my socials!',
+              ]"
+              [loop]="false"
+              [typeSpeed]="35"
+              [showCursor]="false"
+            ></ngx-typed-writer>
+          </p-message>
+          <p-popover #op styleClass="p-2">
+            <div class="w-80">
+              <div class="flex items-start justify-between">
+                <span class="text-base font-semibold">Availability</span>
+                <p-tag severity="success" class="justify-center">Available</p-tag>
+              </div>
+              <div class="flex flex-col gap-6">
+                <div class="flex gap-8">
+                  <div>
+                    <div class="text-color font-medium">Phone</div>
+                    <div class="text-muted-color">+1 (778) 302-5374</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="text-color font-medium">Email</div>
+                  <div class="text-muted-color">lesterivpino@gmail.com</div>
+                </div>
+                <div>
+                  <div class="text-color font-medium">LinkedIn</div>
+                  <div class="text-muted-color">/in/lesterpino</div>
+                </div>
+              </div>
+            </div>
+          </p-popover>
+        </div>
+      </div>
+    </div>
+  </p-fieldset>
+</div>
