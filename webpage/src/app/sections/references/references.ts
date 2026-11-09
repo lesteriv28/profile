@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Avatar, AvatarModule } from 'primeng/avatar';
 import { MessageModule } from 'primeng/message';
 import { ReferencesService } from '../../services/references-service';
+import { NgxTypedWriterComponent } from 'ngx-typed-writer';
 
 @Component({
   selector: 'reference-card',
-  imports: [Avatar, AvatarModule, MessageModule],
+  imports: [Avatar, AvatarModule, MessageModule, NgxTypedWriterComponent],
   templateUrl: './references.html',
   styleUrl: './references.scss',
 })
