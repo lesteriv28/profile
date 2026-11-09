@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { afterNextRender, Component, signal } from '@angular/core';
 import { Navbar } from './sections/navbar/navbar';
 import { HeroSection } from "./sections/hero-section/hero-section";
 import { About } from './sections/about/about';
@@ -16,4 +16,10 @@ import { NgxStarrySkyComponent } from '@omnedia/ngx-starry-sky';
 })
 export class App {
   protected readonly title = signal('webpage');
+    constructor() {
+    afterNextRender(() => {
+      history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    });
+  }
 }
