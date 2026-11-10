@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { KnobModule } from 'primeng/knob';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 import { ChartModule } from 'primeng/chart';
-import { Contact } from '../contact/contact';
-import { References } from '../references/references';
+import { Contact } from '../../shared/contact/contact';
+import { References } from '../../shared/references/references';
 @Component({
   selector: 'app-skills',
   imports: [KnobModule, FormsModule, AnimateOnScrollModule, ChartModule, Contact, References],
