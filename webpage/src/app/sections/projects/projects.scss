@@ -95,5 +95,6 @@
 @media (max-width: 680px) {
   .grid {
     grid-template-columns: 1fr;
+    max-width: 680px;
   }
 }

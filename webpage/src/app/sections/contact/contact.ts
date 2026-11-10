@@ -7,12 +7,26 @@ import { ButtonModule } from 'primeng/button';
 import { MessageModule } from 'primeng/message';
 import { TooltipModule } from 'primeng/tooltip';
 import { NgxTypedWriterComponent } from 'ngx-typed-writer';
-
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'contact-card',
-  imports: [FieldsetModule, AvatarModule, PopoverModule, TagModule, ButtonModule, MessageModule, NgxTypedWriterComponent, TooltipModule],
+  imports: [
+    FieldsetModule,
+    AvatarModule,
+    PopoverModule,
+    TagModule,
+    ButtonModule,
+    MessageModule,
+    NgxTypedWriterComponent,
+    TooltipModule,
+    AnimateOnScrollModule,
+    DialogModule,
+  ],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
-export class Contact {}
+export class Contact {
+  visible: boolean = false;
+}

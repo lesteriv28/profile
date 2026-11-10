@@ -1,4 +1,11 @@
-<div class="flex justify-center" style="background-color: #111214">
+<div
+  class="flex justify-center"
+  style="background-color: #111214"
+  pAnimateOnScroll
+  enterClass="animate-enter zoom-in-50 slide-in-from-b-8 animate-duration-1000"
+  leaveClass="animate-leave fade-out-10 animate-duration-1000"
+  [once]="true"
+>
   <p-fieldset legend="Contact" class="max-w-md w-full">
     <div class="flex flex-col gap-6 text-sm p-2">
       <div class="flex items-center justify-around">
@@ -10,22 +17,23 @@
           decoding="async"
         />
         <div class="flex justify-center">
-          <p-message severity="info" (click)="op.toggle($event)">
+          <p-message severity="info" (click)="this.visible = true">
             <ngx-typed-writer
               [strings]="[
-                'Hey there, nice to meet you I am Lester. Below are some references from peers and colleagues. If you would like to get in contact please click on this message to access my socials!',
+                'Hey there! I\'m Lester, nice to meet you! Below, you\'ll find testimonials from peers and colleagues I\'ve had the pleasure of working with. Want to connect? Click this message to find my socials and get in touch!',
               ]"
               [loop]="false"
               [typeSpeed]="35"
               [showCursor]="false"
             ></ngx-typed-writer>
           </p-message>
-          <p-popover #op styleClass="p-2">
+          <p-dialog
+            [(visible)]="visible"
+            [modal]="true"
+            header="Contact Info"
+            [style]="{ width: '24rem' }"
+          >
             <div class="w-80">
-              <div class="flex items-start justify-between">
-                <span class="text-base font-semibold">Availability</span>
-                <p-tag severity="success" class="justify-center">Available</p-tag>
-              </div>
               <div class="flex flex-col gap-6">
                 <div class="flex gap-8">
                   <div>
@@ -39,11 +47,16 @@
                 </div>
                 <div>
                   <div class="text-color font-medium">LinkedIn</div>
-                  <div class="text-muted-color">/in/lesterpino</div>
+                  <div class="text-muted-color">
+                    <a target="_blank" href="https://www.linkedin.com/in/lesterpino/"
+                      >/in/lesterpino</a
+                    >
+                  </div>
                 </div>
+                <p-tag severity="success" class="justify-center animate-pulse">Available</p-tag>
               </div>
             </div>
-          </p-popover>
+          </p-dialog>
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+
 
 @Component({
   selector: 'app-projects',
@@ -17,6 +19,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     ButtonModule,
     FormsModule,
     SelectButtonModule,
+    AnimateOnScrollModule
   ],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',

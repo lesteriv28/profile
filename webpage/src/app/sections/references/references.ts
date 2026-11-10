@@ -3,10 +3,11 @@ import { Avatar, AvatarModule } from 'primeng/avatar';
 import { MessageModule } from 'primeng/message';
 import { ReferencesService } from '../../services/references-service';
 import { NgxTypedWriterComponent } from 'ngx-typed-writer';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 
 @Component({
   selector: 'reference-card',
-  imports: [Avatar, AvatarModule, MessageModule, NgxTypedWriterComponent],
+  imports: [Avatar, AvatarModule, MessageModule, NgxTypedWriterComponent, AnimateOnScrollModule],
   templateUrl: './references.html',
   styleUrl: './references.scss',
 })
