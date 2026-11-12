@@ -1,0 +1,2 @@
+// Local only (gitignored). See primeng-license.example.ts.
+export const PRIMENG_LICENSE = 'eyJpZCI6IjlhM2MwM2Q0LWEzM2QtNDI5Ni1iMzc1LWY0Njc2NmU5NDA2MiIsInByb2R1Y3QiOiJwcmltZXVpIiwidGllciI6ImNvbW11bml0eSIsInR5cGUiOiJkZXYiLCJpYXQiOjE3ODkwOTk3NzksImV4cCI6MTgyMDYzNTc3OX0.nMBYbDW-Y5nazmnUxph0Tg9n_5-qtMV4yv1bapOvSGoaiGZcFhXVeFDvo_yFvjGGTEIRBx3UM0Ftcu8tzcTYBA';
