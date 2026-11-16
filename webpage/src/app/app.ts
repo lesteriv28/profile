@@ -1,5 +1,5 @@
 import { afterNextRender, Component, signal } from '@angular/core';
-import { Navbar } from './sections/navbar/navbar';
+import { Navbar } from './layout/navbar/navbar';
 import { HeroSection } from "./sections/hero-section/hero-section";
 import { About } from './sections/about/about';
 import { Skills } from './sections/skills/skills';
