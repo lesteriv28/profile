@@ -38,3 +38,8 @@ jobs:
         name: angular-dist
         path: ./webpage/dist/profile/browser
         if-no-files-found: error
+    - name: Output Build Information
+      run: |
+       echo "Run number: ${{ github.run_number }}"
+       echo "Run ID: ${{ github.run_id }}"
+       echo "Commit SHA: ${{ github.sha }}"
