@@ -1,0 +1,34 @@
+name: Site Deployment
+
+on: 
+ push:
+  branches:
+   - main
+   
+ pull_request:
+  branches:
+   - main
+
+jobs:
+  build-static:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./webpage
+        
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+    - name: Set Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 'v26.x'
+    - name: Install Corepack
+      run: npm install --global corepack
+    - name: Enable Corepack
+      run: corepack enable
+    - name: Install dependencies
+      run: yarn install --immutable
+    - name: Build dist files
+      run: yarn build
