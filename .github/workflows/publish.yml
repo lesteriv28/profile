@@ -38,8 +38,8 @@ jobs:
        run-id: ${{ inputs.run_id }}
        github-token: ${{ github.token }}
        path: ./public
-
-    - name: 'go into dir'
-      run: cd public
-    - name: 'display dir contents'
-      run: ls
+       
+    - name: Verify static site
+      run: |
+       ls -lah ./public
+       test -f ./public/index.html
