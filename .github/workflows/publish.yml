@@ -39,7 +39,7 @@ jobs:
        github-token: ${{ github.token }}
        path: ./public
 
-    - name: 'Print dir'
-      run: pwd
+    - name: 'go into dir'
+      run: cd public
     - name: 'display dir contents'
       run: ls
