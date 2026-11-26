@@ -10,7 +10,7 @@ on:
     inputs:
       run_id: 
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Run Id of build'
+        description: 'Run ID from Build workflow'
         # Default value if no value is explicitly provided
         default: ''
         # Input has to be provided for the workflow to run
@@ -28,5 +28,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: get files
-      run: echo "Run ID is ${{ inputs.run_id }}"
+    - name: Download Angular artifact
+      uses: actions/download-artifact@v4
+      with:
+       name: angular-dist
+       run-id: ${{ inputs.run_id }}
+       github-token: ${{ github.token }}
+       path: ./public
+
+    - name: 'Print dir'
+      run: pwd
+    - name: 'display dir contents'
+      run: ls
