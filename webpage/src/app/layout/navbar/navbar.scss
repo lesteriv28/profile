@@ -3,6 +3,16 @@
   top: 0rem;
   z-index: 1100;
   transition: background-color 0.15s;
+  --p-menubar-background: #18181b;
+  --p-menubar-border-color: #3f3f46;
+  --p-menubar-color: #ffffff;
+  --p-menubar-submenu-background: #18181b;
+  --p-menubar-submenu-border-color: #3f3f46;
+  --p-menubar-item-focus-background: #27272a;
+  --p-menubar-item-color: #ffffff;
+  --p-menubar-mobile-button-color: #a1a1aa;
+  --p-menubar-mobile-button-hover-color: #d4d4d8;
+  --p-menubar-mobile-button-hover-background: #27272a;
 }
 
 .layout-topbar-inner {

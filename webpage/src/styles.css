@@ -6,6 +6,7 @@
   --accent-red: #e60023;
   --accent-blue: #3b82f6;
   --accent-neon-blue: #03e9f4;
+  --muted: #e5e4e2;
 }
 
 .text-primary {
@@ -23,6 +24,15 @@ body {
 section {
   max-width: 1150px;
   margin: 0 auto;
+  color: #fff;
+ 
+  h1 {
+    font:
+      700 clamp(36px, 6vw, 52px)/1.1 'Space Grotesk',
+      Inter;
+    margin: 6px 0 14px;
+  }
+
   h2 {
     font:
       700 clamp(26px, 4.5vw, 36px)/1.2 'Space Grotesk',
