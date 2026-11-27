@@ -33,9 +33,15 @@ jobs:
         GH_TOKEN: ${{ github.token }}
         BUILD_RUN_ID: ${{ inputs.run_id }}
 
-      run: |
-       gh api "repos/${{ github.repository }}/actions/runs/${BUILD_RUN_ID}" \
-       --jq '{name, path, event, head_branch, conclusion, head_sha}'      
+      run:  |
+       gh api "repos/${{ github.repository }}/actions/runs/${BUILD_RUN_ID}" > run.json
+
+       jq -e '
+       .conclusion == "success" and
+       .event == "push" and
+       .head_branch == "master" and
+       .path == ".github/workflows/build.yml"
+       ' run.json
        
     # Runs a single command using the runners shell
     - name: Download Angular artifact
@@ -73,12 +79,12 @@ jobs:
       working-directory: ./site
       run: |
        git status --short
-       git log -1 --oneline
+       git diff --cached --stat  
        
     - name: Create commit
       run: |
        if ! git diff --cached --quiet; then
-         git commit -m "Publishing"
+         git commit -m "Deploy build ${{ inputs.run_id }}"
        else
          echo "No changes to commit"
        fi
