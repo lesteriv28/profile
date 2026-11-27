@@ -1,29 +1,44 @@
-  p-selectbutton {
-    gap: 0.5rem;
-    --p-togglebutton-background: transparent;
-    --p-togglebutton-content-padding: 8px 12px;
-    --p-togglebutton-border-color: transparent;
-    --p-togglebutton-checked-border-color: transparent;
-    --p-togglebutton-content-border-radius: 999px;
-    --p-togglebutton-font-weight: 700;
-    --p-togglebutton-checked-background: transparent;
-    --p-togglebutton-content-checked-background: rgba(230, 0, 35, 0.12);
-    --p-togglebutton-hover-background: transparent;
+p-selectbutton {
+  gap: 0.5rem;
+  --p-togglebutton-background: transparent;
+  --p-togglebutton-content-padding: 8px 12px;
+  --p-togglebutton-border-color: transparent;
+  --p-togglebutton-checked-border-color: transparent;
+  --p-togglebutton-content-border-radius: 999px;
+  --p-togglebutton-font-weight: 700;
+  --p-togglebutton-checked-background: transparent;
+  --p-togglebutton-content-checked-background: rgba(230, 0, 35, 0.12);
+  --p-togglebutton-hover-background: transparent;
+  --p-togglebutton-checked-color: #ffffff;
+  --p-togglebutton-color: #a1a1aa;
+  --p-togglebutton-hover-color: #d4d4d8;
 
-    ::ng-deep {
-      .p-togglebutton-content {
-        border: 2px solid rgba(255, 255, 255, 0.1);
-      }
-      .p-togglebutton:not(.p-togglebutton-checked):hover .p-togglebutton-content {
-        background: var(--p-surface-950);
-      }
-      .p-togglebutton-checked .p-togglebutton-content {
-        border: 2px solid rgba(230, 0, 35, 0.12);
+  ::ng-deep {
+    .p-togglebutton-content {
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    .p-togglebutton:not(.p-togglebutton-checked):hover .p-togglebutton-content {
+      background: #09090b;
+    }
+    .p-togglebutton-checked .p-togglebutton-content {
+      border: 2px solid rgba(230, 0, 35, 0.12);
 
-        cursor: default;
-      }
+      cursor: default;
     }
   }
+}
+
+p-card {
+  --p-card-color: #ffffff;
+}
+
+p-tag {
+  --p-tag-info-background: color-mix(in srgb, #0ea5e9, transparent 84%);
+  --p-tag-info-color: #7dd3fc;
+
+  --p-tag-warn-background: color-mix(in srgb, #f97316, transparent 84%);
+  --p-tag-warn-color: #fdba74;
+}
 
 .btn {
   display: inline-flex;
