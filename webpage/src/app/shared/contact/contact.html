@@ -20,11 +20,16 @@
           <p-message severity="info" (click)="this.visible = true">
             <ngx-typed-writer
               [strings]="[
-                'Hey there! I\'m Lester, nice to meet you! Below, you\'ll find testimonials from peers and colleagues I\'ve had the pleasure of working with. Want to connect? Click this message to find my socials and get in touch!',
+                'Hey there! I\'m Lester, nice to meet you! Below, you\'ll find testimonials from peers and colleagues I\'ve had the pleasure of working with. Want to connect? ' +
+                  '<p-tag class=\'text-accent-neon-blue rounded-md animate-pulse\'>' +
+                  ' Click this message' +
+                  '</p-tag>' +
+                  ' to find my socials and get in touch! ',
               ]"
               [loop]="false"
               [typeSpeed]="35"
               [showCursor]="false"
+              [isHTML]="true"
             ></ngx-typed-writer>
           </p-message>
           <p-dialog
@@ -37,16 +42,16 @@
               <div class="flex flex-col gap-6">
                 <div class="flex gap-8">
                   <div>
-                    <div class=" font-medium">Phone</div>
+                    <div class="font-medium">Phone</div>
                     <div class="text-muted-100">+1 (778) 302-5374</div>
                   </div>
                 </div>
                 <div>
-                  <div class=" font-medium">Email</div>
+                  <div class="font-medium">Email</div>
                   <div class="text-muted-100">lesterivpino@gmail.com</div>
                 </div>
                 <div>
-                  <div class=" font-medium">LinkedIn</div>
+                  <div class="font-medium">LinkedIn</div>
                   <div class="text-muted-100">
                     <a target="_blank" href="https://www.linkedin.com/in/lesterpino/"
                       >/in/lesterpino</a
