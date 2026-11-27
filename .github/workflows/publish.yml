@@ -2,6 +2,9 @@
 
 name: Publish Site
 
+concurrency:
+  group: production-deployment
+  cancel-in-progress: false
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
@@ -9,24 +12,84 @@ on:
     # Inputs the workflow accepts.
     inputs:
       run_id: 
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Run Id of build'
-        # Default value if no value is explicitly provided
-        default: ''
-        # Input has to be provided for the workflow to run
+        description: 'Run ID from Build workflow'
         required: true
-        # The data type of the input
         type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  download:
+  deploy-static:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+
+    - name: Validate run
+      env:
+        GH_TOKEN: ${{ github.token }}
+        BUILD_RUN_ID: ${{ inputs.run_id }}
+
+      run:  |
+       gh api "repos/${{ github.repository }}/actions/runs/${BUILD_RUN_ID}" > run.json
+
+       jq -e '
+       .conclusion == "success" and
+       .event == "push" and
+       .head_branch == "master" and
+       .path == ".github/workflows/build.yml"
+       ' run.json
+       
     # Runs a single command using the runners shell
-    - name: get files
-      run: echo "Run ID is ${{ inputs.run_id }}"
+    - name: Download Angular artifact
+      uses: actions/download-artifact@v4
+      with:
+       name: angular-dist
+       run-id: ${{ inputs.run_id }}
+       github-token: ${{ github.token }}
+       path: ./public
+       
+    - name: Verify static site
+      run: test -f ./public/index.html
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        ref: deployment
+        persist-credentials: true
+        path: ./site
+
+    - name: Configure Git
+      working-directory: ./site
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    
+    - name: Synchronize static files
+      run: rsync -av --delete --exclude='.git/' ./public/ ./site/
+
+    - name: Stage changes
+      run: git add -A
+      working-directory: ./site
+      
+    - name: Inspect deployment changes
+      working-directory: ./site
+      run: |
+       git status --short
+       git diff --cached --stat  
+       
+    - name: Create commit
+      run: |
+       if ! git diff --cached --quiet; then
+         git commit -m "Deploy build ${{ inputs.run_id }}"
+       else
+         echo "No changes to commit"
+       fi
+      working-directory: ./site
+       
+    - name: Push to remote
+      run: git push
+      working-directory: ./site
