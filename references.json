@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Sergio Ojeda Ossa",
+    "headshot": "sergio.jpeg",
+    "comment": "In all my interactions with Lester, I have found him to be trustworthy, hardworking, and dependable.",
+    "title": "Representative - Central & South America",
+    "workplace": "Port Houston Authority",
+    "url": "https://www.linkedin.com/in/sergioojeda/"
+  },
+  {
+    "name": "Mary Samy, MSc.",
+    "headshot": "mary.png",
+    "comment": "Through our interactions, I was impressed by his positive attitude, enthusiasm for learning, and proactive approach to his personal and professional development.",
+    "title": "Faculty of Applied Sciences Co-op Student Advisor",
+    "workplace": "Simon Fraser University",
+    "url": "https://www.sfu.ca/coop/programs/ensc/contact.html"
+  },
+  {
+    "name": "Dr. Andrew Rawicz P.Eng",
+    "headshot": "rawicz.png",
+    "comment": "During Capstone he demonstrated strong problem-solving skills, user-centered design, and effective teamwork. Lester has good potential for reaching higher levels of engineering skill.",
+    "title": "Professor and founder of Biomedical Engineering at SFU",
+    "workplace": "Simon Fraser University",
+    "url": "https://www.linkedin.com/in/andrew-rawicz-1740761/",
+    "school_url":"https://www.sfu.ca/fas/schools/engineering-science/faculty/faculty-members/andrew-rawicz.html"
+  },
+  {
+    "name": "Daniel Sklenar",
+    "headshot": "Daniel.jpeg",
+    "comment": "One of the things that stood out most was how quickly Lester learns. He joined a project with a large existing codebase in a specialized domain, and in a short amount of time he was able to start contributing independently.",
+    "title": "Product Designer",
+    "workplace": "Wärtsilä Marine",
+    "url": "https://www.linkedin.com/in/sklenar-daniel/"
+  }
+]
