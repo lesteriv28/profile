@@ -32,7 +32,7 @@ export class Navbar {
       },
       {
         label: 'Resume',
-        style: { '--p-menubar-item-focus-color': 'var(--accent-neon-blue)' },
+        style: { '--p-menubar-item-focus-color': 'var(--color-accent-neon-blue)' },
         url: "https://raw.githubusercontent.com/lesteriv28/lesteriv28/main/assets/_LesterIvanPinoBarragan.pdf",
         target: '_blank'
       }

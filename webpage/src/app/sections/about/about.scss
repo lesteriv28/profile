@@ -1,0 +1,15 @@
+section {
+  --p-timeline-event-connector-color: #3f3f46;
+}
+.custom_bg {
+  //  bg-surface-0 dark:bg-surface-800
+  background-color: #27272a;
+  border-color: #3f3f46;
+  span {
+    color: #e4e4e7;
+    background-color: #3f3f46;
+  }
+  .border-t {
+    border-color: #3f3f46;
+  }
+}

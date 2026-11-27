@@ -2,20 +2,15 @@
 @import 'tailwindcss';
 @import 'tailwindcss-primeui';
 
-* {
-  --accent-red: #e60023;
-  --accent-blue: #3b82f6;
-  --accent-neon-blue: #03e9f4;
-  --muted: #e5e4e2;
+@theme {
+  --color-accent-red: #e60023;
+  --color-accent-blue: #3b82f6;
+  --color-accent-neon-blue: #03e9f4;
+
+  --color-muted-100: #a1a1aa;
+  --color-muted-200: #e4e4e7;
 }
 
-.text-primary {
-  color: var(--accent-blue);
-}
-
-.text-secondary {
-  color: var(--accent-red);
-}
 /* Matches om-starry-sky's default sky color, so the page is dark before the sky loads */
 body {
   background-color: rgb(23 23 23);
@@ -25,7 +20,7 @@ section {
   max-width: 1150px;
   margin: 0 auto;
   color: #fff;
- 
+
   h1 {
     font:
       700 clamp(36px, 6vw, 52px)/1.1 'Space Grotesk',

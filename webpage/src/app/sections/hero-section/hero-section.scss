@@ -41,7 +41,6 @@ img {
 }
 
 .kicker {
-  color: var(--muted);
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -65,7 +64,6 @@ img {
 }
 
 .btn.primary {
-  background: var(--accent-red);
   border-color: transparent;
 }
 
@@ -82,7 +80,6 @@ img {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--muted);
   width: 44px;
   height: 44px;
   border-radius: 999px;
@@ -93,7 +90,7 @@ img {
 }
 
 .social:hover {
-  color: var(--accent-red);
+  color: var(--color-accent-red);
   transform: translateY(-1px);
-  border: 1px solid var(--accent-red);
+  border: 1px solid var(--color-accent-red);
 }

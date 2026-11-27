@@ -15,8 +15,22 @@ p-fieldset {
   --p-fieldset-background: var(--panel, #111214);
   --p-fieldset-border-color: transparent;
   --p-fieldset-legend-background: var(--panel, #111214);
+  --p-fieldset-legend-color: #ffffff;
 }
 
 p-message {
   cursor: pointer;
+  --p-message-info-color: #3b82f6;
+  --p-message-info-background: color-mix(in srgb, #3b82f6, transparent 84%);
+  --p-message-info-border-color: color-mix(in srgb, #1d4ed8, transparent 64%);
+  --p-message-info-color: #3b82f6;
+}
+
+p-dialog {
+  --p-dialog-color: #ffffff;
+  --p-dialog-background: #18181b;
+  --p-dialog-border-color: #3f3f46;
+  --p-tag-success-background: color-mix(in srgb, #22c55e, transparent 84%);
+  --p-tag-success-color: #86efac;
+  --p-mask-background: rgba(0, 0, 0, 0.6);
 }
